@@ -1,5 +1,5 @@
 # WhatTheNAds!
-İndirme linki -> https://drive.google.com/file/d/1vt2lbSjCeaoqyXKZDmU-HZvzWDm0ieye/view?usp=sharing
+İndirme linki -> https://tinyurl.com/t64je8vb
 TR
 WhatTheNAds! reklamsız dizi izlemeyi mümkün kılan açık kaynaklı bir projedir.
 EN
