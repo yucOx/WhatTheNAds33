@@ -4,6 +4,7 @@
 **TR**
 
 WhatTheNAds! reklamsız dizi izlemeyi mümkün kılan açık kaynaklı bir projedir.
+
 **EN**
 
 WhatTheNAds! is an open source project that makes avaible watching series without ads.
