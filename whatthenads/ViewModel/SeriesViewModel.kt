@@ -8,19 +8,19 @@ import androidx.lifecycle.viewModelScope
 import com.yucox.whatthenads.Model.SeriesInfo
 import com.yucox.whatthenads.Model.UserInfo
 import com.yucox.whatthenads.R
+import com.yucox.whatthenads.Repository.FirebaseSeriesDataSource
+import com.yucox.whatthenads.Repository.FirebaseUserDataSource
 import com.yucox.whatthenads.Repository.SeriesRepository
 import com.yucox.whatthenads.Repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 class SeriesViewModel : ViewModel() {
     private val _seriesInfo = MutableLiveData<SeriesInfo>()
     private val _seriesList = MutableLiveData<ArrayList<SeriesInfo>>()
-    private val _repository = SeriesRepository()
+    private val _repository = SeriesRepository(FirebaseSeriesDataSource())
     private val _message = MutableLiveData<String>()
     private val _mainUser = MutableLiveData<UserInfo>()
     private val _adList = MutableLiveData<ArrayList<String>>()
@@ -118,7 +118,7 @@ class SeriesViewModel : ViewModel() {
     fun getMainUserInfo() {
         viewModelScope.launch {
             val result = withContext(Dispatchers.IO) {
-                UserRepository().fetchUserInfo()
+                UserRepository(FirebaseUserDataSource()).fetchUserInfo()
             }
 
             if (result != null) {

@@ -15,6 +15,7 @@ import com.yucox.pillpulse.View.LoginActivity
 import com.yucox.whatthenads.Adapter.ListFavoritesAdapter
 import com.yucox.whatthenads.Model.SeriesInfo
 import com.yucox.whatthenads.R
+import com.yucox.whatthenads.Repository.FirebaseUserDataSource
 import com.yucox.whatthenads.Repository.UserRepository
 import com.yucox.whatthenads.Util.Websites.DIZIBOX
 import com.yucox.whatthenads.ViewModel.SeriesViewModel
@@ -96,7 +97,7 @@ class SelectActivity : AppCompatActivity() {
                 }
 
                 binding.logOutBtn.setOnClickListener {
-                    UserRepository().signOut()
+                    UserRepository(FirebaseUserDataSource()).signOut()
                     val intent = Intent(
                         this,
                         LoginActivity::class.java

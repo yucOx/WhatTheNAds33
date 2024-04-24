@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yucox.whatthenads.Model.UserInfo
+import com.yucox.whatthenads.Repository.FirebaseUserDataSource
 import com.yucox.whatthenads.Repository.UserRepository
 import com.yucox.whatthenads.Util.Messages.TRYSAVEAGAIN
 import com.yucox.whatthenads.Util.Messages.UNEXPECTEDERROR
@@ -21,7 +22,7 @@ class LoginViewModel : ViewModel() {
     val status: LiveData<Int> = _status
     val error: LiveData<String> = _error
 
-    private val _repository = UserRepository()
+    private val _repository = UserRepository(FirebaseUserDataSource())
 
     fun isAnyoneIn(): Int {
         return _repository.isAnyoneIn()

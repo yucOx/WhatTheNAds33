@@ -22,6 +22,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.monstertechno.adblocker.AdBlockerWebView
 import com.yucox.whatthenads.ViewModel.SeriesViewModel
 import com.yucox.whatthenads.Model.SeriesInfo
 import com.yucox.whatthenads.R
