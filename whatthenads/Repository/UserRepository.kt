@@ -38,5 +38,4 @@ class UserRepository(private val dataSource: IUserRepository) : IUserRepository 
     override suspend fun fetchUserInfo(): UserInfo? {
         return dataSource.fetchUserInfo()
     }
-
 }
